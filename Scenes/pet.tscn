@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://bayu4yfvsclem"]
+
+[ext_resource type="Texture2D" uid="uid://yj11diqwr85m" path="res://art/Nutty/IdleWithBlink.png" id="1_pd1rm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qckc7"]
+atlas = ExtResource("1_pd1rm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df2ap"]
+atlas = ExtResource("1_pd1rm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6lfn"]
+atlas = ExtResource("1_pd1rm")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq6iv"]
+atlas = ExtResource("1_pd1rm")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i8xw"]
+atlas = ExtResource("1_pd1rm")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24jqe"]
+atlas = ExtResource("1_pd1rm")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw8kh"]
+atlas = ExtResource("1_pd1rm")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwyhm"]
+atlas = ExtResource("1_pd1rm")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1oafd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qckc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df2ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6lfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq6iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i8xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24jqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lw8kh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwyhm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Pet" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_1oafd")
+autoplay = "default"
+frame_progress = 0.39786026
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(10, 10)
