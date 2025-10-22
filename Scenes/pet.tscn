@@ -76,11 +76,3 @@ script = ExtResource("2_qckc7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-4, -8, 18, -7, 17, 6, 14, 12, 9, 13, 7, 17, 3, 18, -6, 18, -9, 14, -12, 4, -8, -5)
-
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
