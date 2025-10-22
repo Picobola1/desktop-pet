@@ -1,7 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://lbebweygtlkd"]
+[gd_scene load_steps=3 format=3 uid="uid://lbebweygtlkd"]
 
 [ext_resource type="PackedScene" uid="uid://bayu4yfvsclem" path="res://Scenes/pet.tscn" id="1_a02cp"]
+[ext_resource type="Script" uid="uid://bljhoviec6apo" path="res://Scenes/pet.gd" id="1_go701"]
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_go701")
 
 [node name="Pet" parent="." instance=ExtResource("1_a02cp")]
+script = null
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-1, 0)
+color = Color(1, 1, 1, 0.38039216)
+polygon = PackedVector2Array(-326, -45)
+uv = PackedVector2Array(-326, -45)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-4, -8, 18, -7, 17, 6, 14, 12, 9, 13, 7, 17, 3, 18, -6, 18, -9, 14, -12, 4, -8, -5)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
