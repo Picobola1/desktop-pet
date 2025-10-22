@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var pet: AnimatedSprite2D = $Pet
 
-
+var clicks = 0
 
 func _ready() -> void:
 	var petScale = pet.scale
@@ -17,11 +17,21 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.pressed:
-			for i in range(360):
-				get_window().position += Vector2i(-5,0)
+		if clicks == 0:
+			if event.pressed:
+				clicks += 1
+				for i in range(355):
+					get_window().position += Vector2i(-5,0)
+					pet.play("walk")
+					await get_tree().process_frame
+				pet.flip_h = false
+				await get_tree().create_timer(1.0).timeout
+				pet.play("idle")
+		elif clicks == 1:
+			clicks = 0
+			for i in range(355):
+				get_window().position += Vector2i(5,0)
 				pet.play("walk")
-				
 				await get_tree().process_frame
-				
-			
+			pet.flip_h = true
+			pet.play("idle")

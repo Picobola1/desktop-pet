@@ -80,7 +80,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_mwyhm")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -103,8 +103,9 @@ animations = [{
 
 [node name="Pet" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_1oafd")
-autoplay = "default"
-frame_progress = 0.30700502
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.18180916
 flip_h = true
 script = ExtResource("2_qckc7")
 
