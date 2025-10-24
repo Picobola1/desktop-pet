@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bayu4yfvsclem"]
+[gd_scene load_steps=16 format=3 uid="uid://bayu4yfvsclem"]
 
 [ext_resource type="Texture2D" uid="uid://yj11diqwr85m" path="res://art/Nutty/IdleWithBlink.png" id="1_pd1rm"]
 [ext_resource type="Texture2D" uid="uid://b7detqw1rqtnx" path="res://art/Nutty/WalkRun.png" id="2_df2ap"]
-[ext_resource type="Script" uid="uid://bljhoviec6apo" path="res://Scenes/pet.gd" id="2_qckc7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qckc7"]
 atlas = ExtResource("1_pd1rm")
@@ -107,7 +106,6 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.18180916
 flip_h = true
-script = ExtResource("2_qckc7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

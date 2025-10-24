@@ -7,4 +7,3 @@
 script = ExtResource("1_go701")
 
 [node name="Pet" parent="." instance=ExtResource("1_a02cp")]
-script = null
