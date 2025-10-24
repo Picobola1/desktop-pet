@@ -31,6 +31,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Foods" type="AnimatedSprite2D"]
+[node name="Foods" type="Node2D"]
+
+[node name="Foods" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_md423")
-animation = &"coffe"
+animation = &"pumkin"
+autoplay = "pumkin"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
