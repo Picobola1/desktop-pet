@@ -5,7 +5,8 @@
 
 [node name="Food" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_j4qko")
-animation = &"cross"
+animation = &"pumkin"
+autoplay = "pumkin"
 script = ExtResource("2_fhto3")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -20,15 +20,15 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
 			
-			var randNum = 2#randi_range(1,5)
+			var randNum = randi_range(1,5)
 			if randNum == 1:
 				await ToEdge(350,true,true)
 				await ToEdge(350,true,false)
 				pet.flip_h = false
 				pet.play("idle")
 			if randNum == 2:
-				MakeWindow()
-				Foods.RandomFood($Food)
+				MakeWindow("res://Scenes/food.tscn")
+			
 			if randNum == 3:
 				print("3")
 			if randNum == 4:
@@ -44,29 +44,28 @@ func ToEdge(range: int,direction: bool,move: bool):
 				get_window().position += Vector2i(-5,0)
 			await get_tree().process_frame
 			pet.play("walk")
-func MakeWindow():
+func MakeWindow(scene_path):
 
-	var food_window = Window.new()
-	food_window.title = "Pumpkin Time!"
+	var window = Window.new()
+	window.title = "Pumpkin Time!"
 	
-	food_window.size = Vector2i(50, 50)
-	food_window.position = Vector2i(randi_range(1,800), randi_range(1,800))
-	food_window.unresizable = true
-	food_window.always_on_top = true
-	food_window.visible = false  # important: hide until scene is ready
-	food_window.process_mode = Node.PROCESS_MODE_ALWAYS  # keep running even if unfocused
-	food_window.transparent = true
-	food_window.borderless = true
+	window.size = Vector2i(50, 50)
+	window.position = Vector2i(randi_range(1,800), randi_range(1,800))
+	window.unresizable = true
+	window.always_on_top = true
+	window.visible = false  # important: hide until scene is ready
+	window.process_mode = Node.PROCESS_MODE_ALWAYS  # keep running even if unfocused
+	window.transparent = true
+	window.borderless = true
 	
 	
 
 
-	get_tree().root.add_child(food_window)
+	get_tree().root.add_child(window)
 
-	var food_scene = await MakeWindow()
-	food_scene.RandomFood(food_scene)
-
+	var scene = load(scene_path).instantiate()
+	window.add_child(scene)
 	await get_tree().process_frame  # wait one frame so it's ready
-	food_window.visible = true
+	window.visible = true
 	
-	return food_scene
+	return scene

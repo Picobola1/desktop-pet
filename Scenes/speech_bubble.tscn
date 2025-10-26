@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcqqv8ab0kvdc"]
+
+[ext_resource type="Texture2D" uid="uid://bpl4qkqe2jyig" path="res://art/speechBubble.png" id="1_0ss60"]
+[ext_resource type="FontFile" uid="uid://c1p78mo4bw8mm" path="res://art/PixelOperator8-Bold.ttf" id="2_f4c0y"]
+
+[node name="SpeechBubble" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 107.0
+offset_bottom = 109.38259
+texture = ExtResource("1_0ss60")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 36.0
+offset_right = 101.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f4c0y")
+theme_override_font_sizes/font_size = 8
+text = "Bro Stop Touching Me"
+horizontal_alignment = 1
+autowrap_mode = 3
