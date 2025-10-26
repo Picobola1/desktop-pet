@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://7yci84bfiyg1"]
+
+[ext_resource type="Texture2D" uid="uid://bq6ucfar0vvi7" path="res://art/Free_pixel_food_16x16/Icons/coffee_espresso.png" id="1_ar2nt"]
+[ext_resource type="Texture2D" uid="uid://cipbjsxjrbpcu" path="res://art/Free_pixel_food_16x16/Icons/pastry_croissant.png" id="2_v7b6p"]
+[ext_resource type="Texture2D" uid="uid://buo1aarwxm7j6" path="res://art/Free_pixel_food_16x16/Icons/vegetable_pumpkin.png" id="3_siaec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hb68"]
+atlas = ExtResource("1_ar2nt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0fp1"]
+atlas = ExtResource("2_v7b6p")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud83k"]
+atlas = ExtResource("3_siaec")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hb68")
+}],
+"loop": true,
+"name": &"coffe",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0fp1")
+}],
+"loop": true,
+"name": &"cross",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud83k")
+}],
+"loop": true,
+"name": &"pumkin",
+"speed": 5.0
+}]

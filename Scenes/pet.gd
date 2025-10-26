@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 				pet.play("idle")
 			if randNum == 2:
 				MakeWindow()
-				print("2")
+				Foods.RandomFood($Food)
 			if randNum == 3:
 				print("3")
 			if randNum == 4:
@@ -49,7 +49,7 @@ func MakeWindow():
 	var food_window = Window.new()
 	food_window.title = "Pumpkin Time!"
 	
-	food_window.size = Vector2i(400, 400)
+	food_window.size = Vector2i(50, 50)
 	food_window.position = Vector2i(randi_range(1,800), randi_range(1,800))
 	food_window.unresizable = true
 	food_window.always_on_top = true
@@ -58,12 +58,15 @@ func MakeWindow():
 	food_window.transparent = true
 	food_window.borderless = true
 	
+	
 
 
 	get_tree().root.add_child(food_window)
 
-	var food_scene = preload("res://foods.tscn").instantiate()
-	food_window.add_child(food_scene)
+	var food_scene = await MakeWindow()
+	food_scene.RandomFood(food_scene)
 
 	await get_tree().process_frame  # wait one frame so it's ready
 	food_window.visible = true
+	
+	return food_scene

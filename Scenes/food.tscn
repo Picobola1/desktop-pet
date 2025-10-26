@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg11ehtv8qr02"]
+
+[ext_resource type="SpriteFrames" uid="uid://7yci84bfiyg1" path="res://food.tres" id="1_j4qko"]
+[ext_resource type="Script" uid="uid://bq1s2uqkswrlc" path="res://foods.gd" id="2_fhto3"]
+
+[node name="Food" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_j4qko")
+animation = &"cross"
+script = ExtResource("2_fhto3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

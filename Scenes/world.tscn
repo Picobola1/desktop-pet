@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://lbebweygtlkd"]
+[gd_scene load_steps=5 format=3 uid="uid://lbebweygtlkd"]
 
 [ext_resource type="PackedScene" uid="uid://bayu4yfvsclem" path="res://Scenes/pet.tscn" id="1_a02cp"]
 [ext_resource type="Script" uid="uid://bljhoviec6apo" path="res://Scenes/pet.gd" id="1_go701"]
+[ext_resource type="PackedScene" uid="uid://dg11ehtv8qr02" path="res://Scenes/food.tscn" id="3_5a7ea"]
+[ext_resource type="Script" uid="uid://bq1s2uqkswrlc" path="res://foods.gd" id="4_8j60k"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_go701")
 
 [node name="Pet" parent="." instance=ExtResource("1_a02cp")]
+
+[node name="Food" parent="." instance=ExtResource("3_5a7ea")]
+position = Vector2(72, 8)
+animation = &"pumkin"
+script = ExtResource("4_8j60k")
