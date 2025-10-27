@@ -20,17 +20,17 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
 			
-			var randNum = randi_range(1,5)
+			var randNum = 3#randi_range(1,5)
 			if randNum == 1:
 				await ToEdge(350,true,true)
 				await ToEdge(350,true,false)
 				pet.flip_h = false
 				pet.play("idle")
 			if randNum == 2:
-				MakeWindow("res://Scenes/food.tscn")
-			
+				MakeWindow("res://Scenes/food.tscn", Vector2i(randi_range(1,800), randi_range(1,800)), Vector2i(50,50))
 			if randNum == 3:
-				print("3")
+				MakeWindow("res://Scenes/speech_bubble.tscn", Vector2i(get_window().position) + Vector2i(-70,5), Vector2i(105,100))
+				
 			if randNum == 4:
 				print("4")
 			if randNum == 5:
@@ -44,13 +44,13 @@ func ToEdge(range: int,direction: bool,move: bool):
 				get_window().position += Vector2i(-5,0)
 			await get_tree().process_frame
 			pet.play("walk")
-func MakeWindow(scene_path):
+func MakeWindow(scene_path, pos: Vector2i, size: Vector2i):
 
 	var window = Window.new()
 	window.title = "Pumpkin Time!"
 	
-	window.size = Vector2i(50, 50)
-	window.position = Vector2i(randi_range(1,800), randi_range(1,800))
+	window.size = size
+	window.position = pos
 	window.unresizable = true
 	window.always_on_top = true
 	window.visible = false  # important: hide until scene is ready

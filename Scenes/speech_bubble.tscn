@@ -10,6 +10,7 @@ offset_right = 107.0
 offset_bottom = 109.38259
 texture = ExtResource("1_0ss60")
 expand_mode = 5
+flip_h = true
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 0
